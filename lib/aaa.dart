@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
@@ -29,6 +30,10 @@ class AAA extends StatefulWidget {
 
 class _AAAState extends State<AAA> {
   String? name;
+  final DateTime _dateTimeNow = DateTime.now();
+  final int _unixTimeNow = DateTime.now().millisecondsSinceEpoch;
+  final int _unixTimeSixDaysAgo = DateTime.now().add(const Duration(days: -6)).millisecondsSinceEpoch;
+  final int _unixTimeTwentyNineDaysAgo = DateTime.now().add(const Duration(days: -29)).millisecondsSinceEpoch;
 
   @override
   void initState() {
@@ -38,6 +43,23 @@ class _AAAState extends State<AAA> {
     // print('2 >> $name');
   }
 
+  String x = 'sdfsdfds';
+  @override
+  Widget build(BuildContext context) {
+    print('build()');
+    // print('4 >> $name');
+
+    return Center(
+      child: TextButton(
+        onPressed: () {
+          x += '333';
+          setState(() {});
+        },
+        child: Text(x),
+      ),
+    );
+  }
+
   @override
   void didChangeDependencies() {
     print('didChangeDependencies()');
@@ -45,14 +67,6 @@ class _AAAState extends State<AAA> {
     name = 'flutter test3';
     // print('3 >> $name');
     super.didChangeDependencies();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    print('build()');
-    // print('4 >> $name');
-
-    return Center(child: Text(name!));
   }
 
   @override
