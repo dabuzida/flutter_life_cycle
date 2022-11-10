@@ -14,13 +14,13 @@ import 'package:flutter/src/widgets/framework.dart';
 
 // initState() >> didChangeDependencies() >> build(): build 멤버변수 >> build return된것 실행
 
-class AAA extends StatefulWidget {
-  const AAA({Key? key}) : super(key: key);
+class BBB extends StatefulWidget {
+  const BBB({Key? key}) : super(key: key);
 
   @override
-  State<AAA> createState() {
-    print('AAA - createState');
-    _AAAState newObj = _AAAState();
+  State<BBB> createState() {
+    print('BBB - createState');
+    _BBBState newObj = _BBBState();
     // print('>> ${newObj.name}');
     // newObj.name = 'flutter test';
     // print('1 >> ${newObj.name}');
@@ -28,20 +28,21 @@ class AAA extends StatefulWidget {
   }
 }
 
-class _AAAState extends State<AAA> {
+class _BBBState extends State<BBB> {
   String? name;
 
   @override
   void initState() {
-    print('AAA - initState');
+    print('BBB - initState');
     super.initState();
     name = 'flutter test2';
   }
 
-  String x = 'AAA';
+  String x = 'BBB';
   @override
   Widget build(BuildContext context) {
-    print('AAA - build');
+    print('BBB - build');
+
     return Center(
       child: TextButton(
         onPressed: () {
@@ -55,26 +56,26 @@ class _AAAState extends State<AAA> {
 
   @override
   void didChangeDependencies() {
-    print('AAA - didChangeDependencies');
+    print('BBB - didChangeDependencies');
     name = 'flutter test3';
     super.didChangeDependencies();
   }
 
   @override
   void dispose() {
-    print('AAA - dispose');
+    print('BBB - dispose');
     super.dispose();
   }
 
   @override
   void deactivate() {
-    print('AAA - deactivate');
+    print('BBB - deactivate');
     super.deactivate();
   }
 
   @override
-  void didUpdateWidget(covariant AAA oldWidget) {
-    print('AAA - didUpdateWidget');
+  void didUpdateWidget(covariant BBB oldWidget) {
+    print('BBB - didUpdateWidget');
     super.didUpdateWidget(oldWidget);
   }
 }
