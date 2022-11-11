@@ -27,12 +27,13 @@ class _MyAppState extends State<MyApp> {
           centerTitle: true,
           actions: [
             IconButton(
-              icon: const Icon(Icons.shopping_cart),
+              icon: const Icon(Icons.change_circle_outlined),
               onPressed: () {
                 _switch = !_switch;
                 setState(() {});
               },
             ),
+            SizedBox(width: 40),
           ],
         ),
         body: _switch ? const AAA() : const BBB(),
